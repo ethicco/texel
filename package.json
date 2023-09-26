@@ -1,0 +1,32 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:frontend": "cd packages/frontend && yarn dev",
+    "start:backend": "cd packages/backend && yarn start",
+    "eslint": "eslint --ext=ts --ext=tsx .",
+    "es-lint:fix": "eslint --ext=ts --tsx . --quiet --fix"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-no-for-of-loops": "^1.0.1",
+    "eslint-plugin-no-function-declare-after-return": "^1.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "lerna": "^6.1.0",
+    "prettier": "^2.8.7"
+  },
+  "dependencies": {}
+}

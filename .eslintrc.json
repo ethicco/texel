@@ -1,0 +1,47 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": ["./packages/backend/tsconfig.json", "./packages/frontend/tsconfig.json"]
+	},
+	"extends": [
+		"eslint:recommended",
+		"airbnb",
+		"airbnb-typescript",
+		"airbnb/hooks",
+		"prettier",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:prettier/recommended"
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"react-hooks",
+		"prettier",
+		"no-function-declare-after-return",
+		"no-for-of-loops"
+	],
+	"rules": {
+		"prettier/prettier": [
+			"error", {
+				"semi": true,
+				"endOfLine": "auto",
+				"trailingComma": "all",
+				"printWidth": 80
+			}
+		],
+		"react/react-in-jsx-scope": "off",
+		"react/button-has-type": "off",
+		"@typescript-eslint/no-shadow": "off",
+		"@typescript-eslint/no-floating-promises": "off",
+		"react/no-array-index-key": "off",
+		"@typescript-eslint/no-misused-promises": "off"
+	}
+}

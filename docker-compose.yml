@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  # frontend:
+  #   build: ./packages/frontend
+  #   container_name: texel-frontend
+  #   command: ["yarn", "build"]
+  #   ports:
+  #     - 8080:8080
+  #   restart: unless-stopped
+  #   networks:
+  #     - texel-docker-network
+
+  # backend:
+  #   build: ./packages/backend
+  #   container_name: texel-backend
+  #   command: ["yarn", "start"]
+  #   restart: unless-stopped
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - postgres
+  #   networks:
+  #     - texel-docker-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: texel-pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: texel
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdb:/var/lib/postgresql/data
+    networks:
+      - texel-docker-network
+
+volumes:
+  pgdb:
+
+networks:
+  texel-docker-network:
+    driver: bridge
